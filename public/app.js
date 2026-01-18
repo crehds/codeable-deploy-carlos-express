@@ -1,3 +1,6 @@
+const API_URL =
+  'https://codeable-deploy-carlos-express-production.up.railway.app/';
+
 const productsContainer = document.getElementById('productos-container');
 const selectorUsuarioEl = document.getElementById('selector-usuario');
 const spanUsuarios = document.getElementById('usuario-nombre');
@@ -6,13 +9,13 @@ let usuarioActual = null;
 let carritoActual = [];
 
 async function fetchHealth() {
-  const response = await fetch('http://localhost:4000/api');
+  const response = await fetch(`${API_URL}/api`);
   const message = await response.text();
   return message;
 }
 
 async function fetchProducts() {
-  const response = await fetch('http://localhost:4000/api/products');
+  const response = await fetch(`${API_URL}/api/products`);
   const products = await response.json();
   return mostrarProductos(products);
 }
@@ -34,7 +37,7 @@ async function mostrarProductos(products) {
 
 async function fetchUsers() {
   try {
-    const response = await fetch('http://localhost:4000/api/users');
+    const response = await fetch(`${API_URL}/api/users`);
     const users = await response.json();
 
     users.forEach((user) => {
@@ -65,7 +68,7 @@ selectorUsuarioEl.addEventListener('change', (event) => {
 
 async function selectUser(userId) {
   try {
-    const response = await fetch(`http://localhost:4000/api/users/${userId}`);
+    const response = await fetch(`${API_URL}/api/users/${userId}`);
     usuarioActual = await response.json();
 
     carritoActual = usuarioActual.carrito;
@@ -85,7 +88,7 @@ async function agregarAlCarrito(productId, nombre, precio) {
 
   try {
     const response = await fetch(
-      `http://localhost:4000/api/users/${usuarioActual.id}/cart`,
+      `${API_URL}/api/users/${usuarioActual.id}/car`,
       {
         method: 'POST',
         headers: {
@@ -149,7 +152,7 @@ const finishPurchaseBtn = document.getElementById('finalizar-compra');
 cleanCartBtn.addEventListener('click', async () => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/users/${usuarioActual.id}/cart`,
+      `${API_URL}/api/users/${usuarioActual.id}/car`,
       {
         method: 'DELETE'
       }
@@ -229,7 +232,7 @@ async function changeAmount(productId, newAmount) {
 
   try {
     const response = await fetch(
-      `http://localhost:4000/api/users/${usuarioActual.id}/cart/${productId}`,
+      `${API_URL}/api/users/${usuarioActual.id}/cart/${productId}`,
       {
         method: 'PUT',
         headers: {
@@ -256,7 +259,7 @@ async function changeAmount(productId, newAmount) {
 async function deleteItem(productId) {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/users/${usuarioActual.id}/cart/${productId}`,
+      `${API_URL}/api/users/${usuarioActual.id}/cart/${productId}`,
       {
         method: 'DELETE'
       }
