@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "nombre": "Juan Pérez",
+    "email": "juan@example.com",
+    "carrito": [
+      {
+        "productId": 1,
+        "nombre": "Laptop",
+        "precio": 999,
+        "cantidad": 1
+      },
+      {
+        "productId": 2,
+        "nombre": "Mouse",
+        "precio": 25,
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "María González",
+    "email": "maria@example.com",
+    "carrito": [
+      {
+        "productId": 1,
+        "nombre": "Laptop",
+        "precio": 999,
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Carlos Rodríguez",
+    "email": "carlos@example.com",
+    "carrito": [
+      {
+        "productId": 5,
+        "nombre": "Monitor",
+        "precio": 79,
+        "cantidad": 1
+      },
+      {
+        "productId": 4,
+        "nombre": "Webcam",
+        "precio": 299,
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Ana Martínez",
+    "email": "ana@example.com",
+    "carrito": []
+  }
+]

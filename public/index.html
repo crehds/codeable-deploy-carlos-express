@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de Productos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tienda de Productos</h1>
+      <div id="usuario-info">
+        <span id="usuario-nombre">Cargando...</span>
+        <select id="selector-usuario">
+          <option value="">Seleccionar usuario...</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <section id="productos-container">
+        <div class="loading">Cargando productos...</div>
+      </section>
+
+      <section id="carrito-preview">
+        <h3>Carrito (<span id="carrito-count">0</span>)</h3>
+        <button id="ver-carrito" disabled>Ver Carrito</button>
+      </section>
+    </main>
+
+    <!-- Modal del Carrito -->
+    <div id="carrito-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Mi Carrito</h2>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div id="carrito-items"></div>
+          <div class="carrito-footer">
+            <div class="total-container">
+              <h3>Total: $<span id="carrito-total">0</span></h3>
+            </div>
+            <div class="carrito-acciones">
+              <button id="vaciar-carrito" class="btn-vaciar">
+                Vaciar Carrito
+              </button>
+              <button id="finalizar-compra" class="btn-finalizar">
+                Finalizar Compra
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
