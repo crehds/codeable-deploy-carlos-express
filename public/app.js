@@ -88,7 +88,7 @@ async function agregarAlCarrito(productId, nombre, precio) {
 
   try {
     const response = await fetch(
-      `${API_URL}/api/users/${usuarioActual.id}/car`,
+      `${API_URL}/api/users/${usuarioActual.id}/cart`,
       {
         method: 'POST',
         headers: {
