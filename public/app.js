@@ -152,7 +152,7 @@ const finishPurchaseBtn = document.getElementById('finalizar-compra');
 cleanCartBtn.addEventListener('click', async () => {
   try {
     const response = await fetch(
-      `${API_URL}/api/users/${usuarioActual.id}/car`,
+      `${API_URL}/api/users/${usuarioActual.id}/cart`,
       {
         method: 'DELETE'
       }
