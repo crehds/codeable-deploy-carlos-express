@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static('./public'));
+app.use(express.static('./docs'));
 
 app.use('/api/products', productsRouter);
 app.use('/api/users', usersRouter);
