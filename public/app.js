@@ -1,5 +1,5 @@
 const API_URL =
-  'https://codeable-deploy-carlos-express-production.up.railway.app/';
+  'https://codeable-deploy-carlos-express-production.up.railway.app';
 
 const productsContainer = document.getElementById('productos-container');
 const selectorUsuarioEl = document.getElementById('selector-usuario');
